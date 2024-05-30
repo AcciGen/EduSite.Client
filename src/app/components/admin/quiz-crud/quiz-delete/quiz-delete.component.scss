@@ -1,0 +1,43 @@
+.container {
+    margin-bottom: 20px;
+  
+    label {
+      font-weight: bold;
+    }
+  
+    .select-container {
+      position: relative;
+  
+      select {
+        appearance: none;
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+  
+        &:focus {
+          outline: none;
+          border-color: #007bff;
+        }
+      }
+  
+      .delete-button {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+    }
+  }
+  

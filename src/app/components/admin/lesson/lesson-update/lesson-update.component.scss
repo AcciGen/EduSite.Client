@@ -1,0 +1,20 @@
+.update-container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background-color: #fafafa;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+  }
+  
+  mat-form-field {
+	width: 100%;
+  }
+  
+  button {
+	align-self: flex-end;
+  }
+  

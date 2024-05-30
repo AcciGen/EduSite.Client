@@ -1,0 +1,24 @@
+<main class="site-main">
+  <div class="main-wrapper ">
+    <app-aside></app-aside>
+  </div>
+  <app-navbar></app-navbar>
+
+  <section class="schedule-section padding">
+
+
+    <app-quiz-create *ngIf="currentComponent === 'quiz-create'" class="create-component"></app-quiz-create>
+    <app-quiz-update *ngIf="currentComponent === 'quiz-update'" class="update-component"></app-quiz-update>
+    <app-quiz-get-all *ngIf="currentComponent === 'quiz-get-all'" class="get-all-component"></app-quiz-get-all>
+    <app-quiz-delete *ngIf="currentComponent === 'quiz-delete'" class="delete-component"></app-quiz-delete>
+    <div class="button-container">
+      <button class="create-button" (click)="showCreateComponent()">Create</button>
+      <button class="update-button" (click)="showUpdateComponent()">Update</button>
+      <button class="get-all-button" (click)="showGetAllComponent()">Get All</button>
+      <button class="delete-button" (click)="showDeleteComponent()">Delete</button>
+    </div>
+
+
+  </section>
+  
+</main>

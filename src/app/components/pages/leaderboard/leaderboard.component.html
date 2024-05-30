@@ -1,0 +1,97 @@
+<main class="site-main">
+  <div class="main-wrapper">
+    <app-aside></app-aside>
+  </div>
+  <app-navbar></app-navbar>
+
+  <section class="leaderboard-section padding">
+    <div class="warpper">
+      <div class="section">
+        <div class="navbar1">
+          <div class="allStudents flex">
+            <h1>@if(user.role == "Admin"){ All Users } @else{ Leaderboard }</h1>
+            <p class="p-fixed">{{ topStudents && topStudents.length }}</p>
+          </div>
+          <div class="searchBorder">
+            <i class="fas fa-search"></i>
+            <input
+              class="search"
+              type="search"
+              placeholder="Search messages..."
+            />
+          </div>
+          <div class="Alltime">
+            <div class="Alltime" (click)="addClass()">
+              <span class="{{ selected1 }}">All Time</span>
+            </div>
+            <div class="Alltime" (click)="addClass2()">
+              <span class="{{ selected2 }}">Weekly</span>
+            </div>
+            <div class="Alltime" (click)="addClass3()">
+              <span class="{{ selected3 }}">Monthly</span>
+            </div>
+            <!-- <span >Weekly</span>
+          <span >Monthly</span> -->
+          </div>
+        </div>
+
+        <div class="navbar2">
+          <strong>RANK</strong>
+          <strong class="navbarName">NAME</strong>
+          <strong class="navbarTotal">TOTAL POINT</strong>
+          <strong class="navbarCompleted">COMPLETED COURSE</strong>
+          <strong class="navbarLearning">LEARNING TIME</strong>
+          <!-- <strong class="navbarActivity">ACTIVITY</strong> -->
+          <strong>ACTION</strong>
+        </div>
+
+        <div class="chiziq"></div>
+
+        <div>
+          <ul class="top-students__list">
+            <li class="top-students__item" *ngFor="let student of topStudents">
+              <a [routerLink]="[]" class="flex">
+                <div class="flex">
+                  <div class="wrapper">
+                    <div class="student__wrapper--rating flex">
+                      <p class="p-fixed">{{ student.rank }}</p>
+                      <span></span>
+                    </div>
+                  </div>
+                  <img
+                    [src]="
+                      student.photoPath === null || student.photoPath === ''
+                        ? 'assets/images/kattamen.png'
+                        : 'https://edu-api.tohirjon.uz/' + student.photoPath
+                    "
+                    width="40"
+                    [alt]="student.name + ' avatar'"
+                  />
+                  <div class="student__wrapper--name">
+                    <h3 class="p-fixed">{{ student.fullName }}</h3>
+                    <p class="p-fixed">{{ student.country }}</p>
+                  </div>
+                  <p class="total p-fixed">{{ student.exp }}</p>
+                  <p class="completed p-fixed">
+                    {{ student.completedCourses }}
+                  </p>
+                  <time class="learning p-fixed">{{
+                    student.learningTime
+                  }}</time>
+                  @if (user.role === "Admin") {
+                  <!-- <p class="action"></p> -->
+                  <button mat-button [matMenuTriggerFor]="menu">•••</button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Update</button>
+                    <button mat-menu-item>Delete</button>
+                  </mat-menu>
+                  }
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

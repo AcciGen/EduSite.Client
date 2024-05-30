@@ -1,0 +1,24 @@
+<div class="coupon-select-container">
+  <label for="coupon-select">Select a Coupon:</label>
+  <select id="coupon-select" class="coupon-select" (change)="onCouponSelect($event)">
+    <option value="" disabled selected>Select a coupon</option>
+    <option *ngFor="let coupon of allCoupons" [value]="coupon.id">
+      {{ coupon.couponCode }} - {{ coupon.discount }}% Off
+    </option>
+  </select>
+</div>
+
+
+<div class="form-container">
+  <div class="form-group">
+    <label for="couponCode">Coupon Code:</label>
+    <input type="text" id="couponCode" [(ngModel)]="newCouponCode" placeholder="Enter new coupon code">
+  </div>
+  <div class="form-group">
+    <label for="discount">Discount:</label>
+    <input type="number" id="discount" [(ngModel)]="newDiscount" placeholder="Enter new discount">
+  </div>
+  <button class="update-button" (click)="updateCoupon()">Update Coupon</button>
+</div>
+
+  <!-- <h1>In Remont !!!</h1> -->

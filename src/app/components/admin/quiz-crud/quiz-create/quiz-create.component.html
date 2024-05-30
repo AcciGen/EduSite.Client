@@ -1,0 +1,17 @@
+<div class="container">
+    <h2 class="p-fixed">Create Quiz</h2>
+    <div class="form-group">
+      <label for="quizTitle">Quiz Title:</label>
+      <input type="text" id="quizTitle" [(ngModel)]="quizTitle" name="quizTitle" class="form-control">
+    </div>
+    <div class="form-group custom-select-container">
+        <label for="courseSelect" class="form-label">Select a Course</label>
+        <select id="courseSelect" class="form-select" [(ngModel)]="selectedCourseId">
+          <option *ngFor="let course of courses" [value]="course.id">
+            {{ course.category.name }} - {{ course.coupon.couponCode }} ({{ course.coupon.discount }}% off)
+          </option>
+        </select>
+      </div>
+    <button (click)="createQuiz()" class="btn btn-primary">Create Quiz</button>
+  </div>
+  

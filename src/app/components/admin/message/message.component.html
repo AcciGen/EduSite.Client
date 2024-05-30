@@ -1,0 +1,29 @@
+<main class="site-main">
+  <div class="main-wrapper ">
+    <app-aside></app-aside>
+  </div>
+  <app-navbar></app-navbar>
+
+  <section class="schedule-section padding">
+    <h1>Messages</h1>
+
+    <ul class="message-list">
+      <li *ngFor="let msg of messages" class="message-item">
+        <div class="message-avatar">
+          <img [src]="getAvatarUrl(msg.sender.photoPath)" alt="{{ msg.sender.userName }}">
+        </div>
+        <div class="message-content">
+          <div class="message-header">
+            <span class="message-sender">{{ msg.sender.userName }}</span>
+            <span class="message-time">{{ msg.date | date:'short' }}</span>
+          </div>
+          <div class="message-body">{{ msg.message }}</div>
+        </div>
+      </li>
+    </ul>
+    
+    
+    
+  </section>
+  
+</main>

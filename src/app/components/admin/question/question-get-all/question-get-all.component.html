@@ -1,0 +1,28 @@
+<div class="container">
+    <h2 class="p-fixed">Quiz Questions</h2>
+    <div class="table-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Option A</th>
+            <th>Option B</th>
+            <th>Option C</th>
+            <th>Correct Option</th>
+            <th>Experience Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let question of questions">
+            <td>{{ question.question }}</td>
+            <td>{{ question.optionA }}</td>
+            <td>{{ question.optionB }}</td>
+            <td>{{ question.optionC }}</td>
+            <td>{{ question.correctOption }}</td>
+            <td>{{ question.exp }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

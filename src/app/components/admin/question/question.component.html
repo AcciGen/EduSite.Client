@@ -1,0 +1,20 @@
+<main class="site-main">
+  <div class="main-wrapper ">
+    <app-aside></app-aside>
+  </div>
+  <app-navbar></app-navbar>
+
+  <section class="schedule-section padding">
+      <app-question-create *ngIf="currentComponent === 'question-create'" class="create-component"></app-question-create>
+      <app-question-update *ngIf="currentComponent === 'question-update'" class="update-component"></app-question-update>
+      <app-question-get-all *ngIf="currentComponent === 'question-get-all'" class="get-all-component"></app-question-get-all>
+      <app-question-delete *ngIf="currentComponent === 'question-delete'" class="delete-component"></app-question-delete>
+      <div class="button-container">
+        <button class="create-button" (click)="showCreateComponent()">Create</button>
+        <button class="update-button" (click)="showUpdateComponent()">Update</button>
+        <button class="get-all-button" (click)="showGetAllComponent()">Get All</button>
+        <button class="delete-button" (click)="showDeleteComponent()">Delete</button>
+      </div>
+  </section>
+  
+</main>

@@ -1,0 +1,35 @@
+<div class="container">
+    <h2 class="p-fixed">Quiz Questions</h2>
+    <div class="form-group">
+      <label for="questionSelect">Select Question to Delete:</label>
+      <select id="questionSelect" class="form-control" [(ngModel)]="selectedQuestionId">
+        <option *ngFor="let question of questions" [value]="question.id">{{ question.question }}</option>
+      </select>
+    </div>
+    <button class="btn btn-danger mt-3" (click)="DeleteQuestion()">Delete Question</button>
+    <div class="table-container mt-4">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Option A</th>
+            <th>Option B</th>
+            <th>Option C</th>
+            <th>Correct Option</th>
+            <th>Experience Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let question of questions">
+            <td>{{ question.question }}</td>
+            <td>{{ question.optionA }}</td>
+            <td>{{ question.optionB }}</td>
+            <td>{{ question.optionC }}</td>
+            <td>{{ question.correctOption }}</td>
+            <td>{{ question.exp }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

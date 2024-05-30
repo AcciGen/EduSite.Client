@@ -1,0 +1,35 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+  
+    .form-group {
+      margin-bottom: 20px;
+    }
+  
+    input[type="text"] {
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 100%;
+      transition: border-color 0.3s;
+    }
+  
+    input[type="text"]:focus {
+      border-color: #007bff;
+    }
+  
+    button {
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    button:hover {
+      background-color: #0056b3;
+    }
+  }
+  

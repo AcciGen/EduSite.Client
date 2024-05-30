@@ -1,0 +1,23 @@
+<main class="site-main">
+  <div class="main-wrapper ">
+    <app-aside></app-aside>
+  </div>
+  <app-navbar></app-navbar>
+
+  <section class="schedule-section padding">
+    
+    <app-coupon-create *ngIf="currentComponent === 'coupon-create'" class="create-component"></app-coupon-create>
+    <app-coupon-update *ngIf="currentComponent === 'coupon-update'" class="update-component"></app-coupon-update>
+    <app-coupon-get-all *ngIf="currentComponent === 'coupon-get-all'" class="get-all-component"></app-coupon-get-all>
+    <app-coupon-delete *ngIf="currentComponent === 'coupon-delete'" class="delete-component"></app-coupon-delete>
+    <div class="button-container">
+      <button class="create-button" (click)="showCreateComponent()">Create</button>
+      <button class="update-button" (click)="showUpdateComponent()">Update</button>
+      <button class="get-all-button" (click)="showGetAllComponent()">Get All</button>
+      <button class="delete-button" (click)="showDeleteComponent()">Delete</button>
+    </div>
+    
+    
+  </section>
+  
+</main>

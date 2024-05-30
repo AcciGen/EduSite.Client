@@ -1,0 +1,36 @@
+<div class="course-select-container">
+  <label for="course-select">Select a Course:</label>
+  <select id="course-select" class="course-select" (change)="onCourseSelect($event)">
+    <option value="" disabled selected>Select a course</option>
+    <option *ngFor="let course of courses" [value]="course.id">
+      {{ course.category.name }}
+    </option>
+  </select>
+</div>
+
+<div class="lesson-list" *ngIf="lessons.length > 0; else noLessons">
+  <h2 class="p-fixed">Lessons</h2>
+  <ul>
+    <li *ngFor="let lesson of lessons">
+      <span>{{ lesson.title }}</span>
+      <button (click)="onLessonSelect(lesson)">Show Video</button>
+      <div *ngIf="selectedLesson === lesson" class="video-container">
+        <!-- <video controls [src]="lesson.videoModel.videoPath" width="320" height="240"></video> -->
+        @defer (on viewport; on timer(3s)) {
+          <video width="800" height="600" controls style="margin-left: 150px;">
+            <source  src="{{'https://edu-api.tohirjon.uz/'+lesson.videoModel.videoPath}}" type="video/mp4" >
+            <source src="movie.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+          </video>
+        } @placeholder {
+          <app-lazy-video></app-lazy-video>
+        }
+      
+        <!-- <button (click)="onDownloadVideo(lesson.videoModel.videoPath)">Download Video</button> -->
+      </div>
+    </li>
+  </ul>
+</div>
+<ng-template #noLessons>
+  <p class="p-fixed">No lessons available for this course.</p>
+</ng-template>

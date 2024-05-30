@@ -1,0 +1,127 @@
+<main class="site-main">
+  <div class="main-wrapper">
+    <app-aside></app-aside>
+  </div>
+  <app-navbar></app-navbar>
+
+  <section class="profile-section padding">
+    <div class="profile-user inner-padding flex">
+      <div class="profile-img flex">
+        <img
+          width="40"
+          [src]="
+            user.photoPath === null || user.photoPath === ''
+              ? 'assets/images/kattamen.png'
+              : 'https://edu-api.tohirjon.uz/' + user.photoPath
+          "
+          alt=""
+        />
+        <div class="profile-img__wrapper">
+          <div class="flex xp-wrapper">
+            <h3 class="p-fixed">{{ user.fullName }}</h3>
+            <!-- <mat-form-field>
+              <input matInput type="file" id="fileInput">
+              <mat-icon matSuffix>attach_file</mat-icon>
+            </mat-form-field> -->
+            <!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+
+            <button class="" (click)="showDialog()" label="Show">
+              <i class="fa-regular fa-pen-to-square"></i> Edit Profile
+            </button>
+          </div>
+          <p class="p-fixed">
+            {{ user.country }} - Joined {{ user.joinedData.split("-")[0] }}/{{
+              user.joinedData.split("-")[1]
+            }}/{{ user.joinedData.split("-")[1].split("T")[0] }}
+          </p>
+          <span class="progress-bar"
+            ><span
+              [style]="
+                'display: block;
+          width: 70%;
+          height: 100%;
+          border-radius: 10px;
+          background-color: blueviolet;
+          width: ' +
+                user.exp / 13 +
+                '%;'
+              "
+            ></span
+          ></span>
+          <div class="xp-wrapper">
+            <strong>{{ user.exp }} XP</strong>
+            <span>1300 XP</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-exp">
+        <a [routerLink]="['/quiz']">
+          <span>Get 300 XP more for learning one course today </span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a routerLink="[/quiz]">
+          <span>Get 300 XP more for learning one course today</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <app-activity></app-activity>
+
+    <div class="profile-course flex">
+      <div class="inner-padding">
+        <h2 class="p-fixed">Latest Course</h2>
+        <app-course-part></app-course-part>
+      </div>
+      <div class="inner-padding">
+        <h2 class="p-fixed">Latest Activity</h2>
+        <ul class="profile-course__list">
+          <li class="profile-course__item">
+            <span>
+              <span></span>
+            </span>
+            <div>
+              <h3 class="p-fixed">Completed Course</h3>
+              <div>
+                <img width="40" src="assets/images/kattamen.png" alt="" />
+                <p class="p-fixed">
+                  Emotional Design Thinking & Design Psychology Masterclass
+                </p>
+              </div>
+              <time>2 min ago</time>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<p-dialog
+  header="Edit Profile"
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ width: '25rem' }"
+>
+  <span class="p-text-secondary block mb-5">Update your information.</span>
+  <div class="flex align-items-center gap-3 mb-3">
+    <label for="username" class="font-semibold w-6rem">Username</label>
+    <input pInputText id="profile-username" class="flex-auto" autocomplete="off" />
+  </div>
+  <div class="flex align-items-center gap-3 mb-5">
+    <label for="email" class="font-semibold w-6rem">Country</label>
+    <input pInputText id="profile-country" class="flex-auto" autocomplete="off" />
+  </div>
+  <form (submit)="onSubmit()" class="edit-btn">
+    <input
+      style="appearance: none"
+      type="file"
+      (change)="onFileSelected($event)"
+      accept="image/*"
+    />
+  </form>
+  <div class="flex justify-content-end gap-2">
+    <p-button label="Cancel" severity="secondary" (click)="visible = false" />
+    <button    (click)="onSubmit(); visible = false" >save</button>
+  </div>
+</p-dialog>

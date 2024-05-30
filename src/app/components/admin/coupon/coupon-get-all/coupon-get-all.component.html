@@ -1,0 +1,15 @@
+<div class="coupon-data">
+    <ul class="coupon-header">
+      <li>ID</li>
+      <li>Coupon Code</li>
+      <li>Discount</li>
+    </ul>
+    <div *ngFor="let coupon of allCoupons" class="coupon-row">
+      <ul>
+        <li>{{ coupon.id }}</li>
+        <li>{{ coupon.couponCode }}</li>
+        <li>{{ coupon.discount }}%</li>
+      </ul>
+    </div>
+  </div>
+  

@@ -1,0 +1,11 @@
+<ul class="quiz-list">
+    <li *ngFor="let quiz of quizzes">
+      <div class="quiz-item">
+        <p class="quiz-title">{{ quiz.title }}</p>
+        <p class="quiz-course">Course: {{ quiz.course.courseName }}</p>
+        <p class="quiz-teacher">Teacher: {{ quiz.course.teacherName }}</p>
+        <!-- Add more details as needed -->
+      </div>
+    </li>
+  </ul>
+  

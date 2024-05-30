@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="form-group custom-select-container">
+      <label for="courseSelect" class="form-label">Select a Course</label>
+      <select id="courseSelect" class="form-select" [(ngModel)]="selectedCourseId">
+        <option *ngFor="let course of courses" [value]="course.id">
+          {{ course.category.name }} - {{ course.coupon.couponCode }} ({{ course.coupon.discount }}% off)
+        </option>
+      </select>
+    </div>
+  
+    <div class="field">
+      <input type="text" id="question" [(ngModel)]="question" placeholder="Question" autofill="autofill">
+      <label for="question">Question</label>
+    </div>
+    <div class="field">
+      <input type="text" id="optionA" [(ngModel)]="optionA" placeholder="Option A" autofill="autofill">
+      <label for="optionA">Option A</label>
+    </div>
+    <div class="field">
+      <input type="text" id="optionB" [(ngModel)]="optionB" placeholder="Option B" autofill="autofill">
+      <label for="optionB">Option B</label>
+    </div>
+    <div class="field">
+      <input type="text" id="optionC" [(ngModel)]="optionC" placeholder="Option C" autofill="autofill">
+      <label for="optionC">Option C</label>
+    </div>
+    <div class="field">
+      <input type="text" id="correctOption" [(ngModel)]="correctOption" placeholder="Correct Option" autofill="autofill">
+      <label for="correctOption">Correct Option</label>
+    </div>
+    <div class="field">
+      <input type="text" id="exp" [(ngModel)]="exp" placeholder="Exp" autofill="autofill">
+      <label for="exp">Exp</label>
+    </div>
+    <button class="submit-button" (click)="submit()">Update</button>
+  </div>
+  

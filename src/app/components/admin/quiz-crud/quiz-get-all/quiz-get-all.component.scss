@@ -1,0 +1,23 @@
+.quiz-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .quiz-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .quiz-title {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .quiz-course, .quiz-teacher {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  

@@ -1,0 +1,112 @@
+
+  
+.button-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+  }
+  
+  button {
+	margin: 0 10px;
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 500px;
+  }
+  
+  button:hover {
+	background-color: #0056b3;
+  }
+  
+  button:focus {
+	outline: none;
+  }
+  
+  @keyframes slideInFromLeft {
+	0% {
+	  transform: translateX(-100%);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0%);
+	  opacity: 1;
+	}
+  }
+  
+  @keyframes slideInFromRight {
+	0% {
+	  transform: translateX(100%);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0%);
+	  opacity: 1;
+	}
+  }
+  
+  @keyframes slideOutToLeft {
+	0% {
+	  transform: translateX(0%);
+	  opacity: 1;
+	}
+	100% {
+	  transform: translateX(-100%);
+	  opacity: 0;
+	}
+  }
+  
+  @keyframes slideOutToRight {
+	0% {
+	  transform: translateX(0%);
+	  opacity: 1;
+	}
+	100% {
+	  transform: translateX(100%);
+	  opacity: 0;
+	}
+  }
+  
+  .create-component, .update-component, .get-all-component, .delete-component {
+	animation-duration: 0.5s;
+  }
+  
+  .create-component.ng-enter {
+	animation: slideInFromLeft ease-out;
+  }
+  
+  .create-component.ng-leave {
+	animation: slideOutToRight ease-in;
+  }
+  
+  .update-component.ng-enter {
+	animation: slideInFromLeft ease-out;
+  }
+  
+  .update-component.ng-leave {
+	animation: slideOutToRight ease-in;
+  }
+  
+  .get-all-component.ng-enter {
+	animation: slideInFromRight ease-out;
+  }
+  
+  .get-all-component.ng-leave {
+	animation: slideOutToLeft ease-in;
+  }
+  
+  .delete-component.ng-enter {
+	animation: slideInFromRight ease-out;
+  }
+  
+  .delete-component.ng-leave {
+	animation: slideOutToLeft ease-in;
+  }
+  

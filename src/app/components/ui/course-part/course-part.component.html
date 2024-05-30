@@ -1,0 +1,38 @@
+<ul class="upcoming__list">
+  @for (course of allCourses; track course.id) {
+  <li class="upcoming__item flex cursor" [routerLink]="['/courses']">
+    <img width="100" height="100" src="assets/images/kattamen.png" alt="" />
+    <div class="upcoming__wrapper">
+<!-- <<<<<<< HEAD
+      <h3 class="p-fixed">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non libero
+        nulla quia molestiae distinctio corrupti, nam perferendis suscipit sunt
+        sit impedit expedita,
+      </h3>
+      <p class="p-fixed">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quod
+        quidem ab et eius officia!
+======= -->
+      <h3 class="p-fixed">
+        {{course.courseName}}
+      </h3>
+      <p class="p-fixed">
+        {{course.description}}
+<!-- >>>>>>> 55044c0ecf505ffd0be4aab16c32d40193075488 -->
+      </p>
+      <div class="flex">
+        <strong class="img-wrapper"
+          ><img
+            width="30"
+            src="assets/images/kattamen.png"
+            alt=""
+          />{{course.teacherName}}</strong
+        >
+        <strong><i class="fa-regular fa-paste"></i>{{course.lessons.length}} Lectures</strong>
+        <strong><i class="fa-regular fa-clock"></i>{{formatTotalTime(course.totalTime)}} total length</strong>
+      </div>
+      <p class="time">Available at 8 am</p>
+    </div>
+  </li>
+}
+</ul>

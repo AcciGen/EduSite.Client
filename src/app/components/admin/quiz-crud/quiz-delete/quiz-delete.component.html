@@ -1,0 +1,10 @@
+<div class="container">
+    <label for="quizSelect">Select a quiz to delete:</label>
+    <div class="select-container">
+      <select id="quizSelect" [(ngModel)]="selectedQuizId">
+        <option *ngFor="let quiz of quizzes" [value]="quiz.id">{{ quiz.title }}</option>
+      </select>
+      <button class="delete-button" (click)="deleteQuiz()">Delete</button>
+    </div>
+  </div>
+  

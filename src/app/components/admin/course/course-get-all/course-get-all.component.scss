@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .coupon-data {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .coupon-header, .coupon-row ul {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .coupon-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+  
+  .coupon-header li, .coupon-row li {
+    display: table-cell;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .coupon-row:nth-child(even) ul {
+    background-color: #f9f9f9;
+  }
+  
+  .coupon-row ul:hover {
+    background-color: #ddd;
+  }
+  

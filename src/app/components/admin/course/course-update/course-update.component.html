@@ -1,0 +1,32 @@
+<div class="course-update-container">
+    <label for="course-name">Course Name:</label>
+    <input type="text" id="course-name" [(ngModel)]="courseName" placeholder="Enter course name">
+  
+    <label for="description">Description:</label>
+    <input type="text" id="description" [(ngModel)]="description" placeholder="Enter description">
+  
+    <label for="total-time">Total Time:</label>
+    <input type="number" id="total-time" [(ngModel)]="totalTime" placeholder="Enter total time">
+  
+    <label for="price">Price:</label>
+    <input type="number" id="price" [(ngModel)]="price" placeholder="Enter price">
+  
+    <label for="language">Language:</label>
+    <input type="text" id="language" [(ngModel)]="language" placeholder="Enter language">
+  
+    <label for="teacher-name">Teacher Name:</label>
+    <input type="text" id="teacher-name" [(ngModel)]="teacherName" placeholder="Enter teacher name">
+  
+    <label for="coupon-id">Coupon ID:</label>
+    <select id="coupon-id" [(ngModel)]="couponId">
+      <option *ngFor="let coupon of coupons" [value]="coupon.id">{{ coupon.couponCode }} - {{ coupon.discount }}% Off</option>
+    </select>
+  
+    <label for="category-id">Category ID:</label>
+    <select id="category-id" [(ngModel)]="categoryId">
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+  
+    <button class="update-button" (click)="updateCourse()">Update Course</button>
+  </div>
+  
